@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "tool-platform.zk-curator.zk-host",
+      "type": "java.lang.String",
+      "defaultValue": "127.0.0.1:2181",
+      "description": "zookeeper host-address."
+    },
+    {
+      "name": "tool-platform.zk-curator.sleep-time-MS",
+      "type": "java.lang.Integer",
+      "defaultValue": "1000",
+      "description": "Zookeeper 重试休眠时间"
+    },
+    {
+      "name": "tool-platform.zk-curator.max-retries",
+      "type": "java.lang.Integer",
+      "defaultValue": "3",
+      "description": "Zookeeper 连接最大尝试次数"
+    },
+    {
+      "name": "tool-platform.zk-curator.session-time-out-MS",
+      "type": "java.lang.Integer",
+      "defaultValue": "30 * 1000",
+      "description": "Zookeeper session 会话超时时间"
+    },
+    {
+      "name": "tool-platform.zk-curator.connection-time-out-MS",
+      "type": "java.lang.Integer",
+      "defaultValue": "3 * 1000",
+      "description": "Zookeeper 连接超时时间"
+    },
+    {
+      "name": "tool-platform.zk-curator.enable",
+      "type": "java.lang.Boolean",
+      "defaultValue": true
+    }
+  ]
+}

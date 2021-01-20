@@ -1,0 +1,4 @@
+tool-platform:
+  zk-curator:
+    enable: true
+    zk-host: 192.168.5.9:2181
