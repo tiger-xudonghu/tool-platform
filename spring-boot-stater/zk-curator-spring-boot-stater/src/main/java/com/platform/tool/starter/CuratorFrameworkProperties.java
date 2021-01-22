@@ -42,4 +42,23 @@ public class CuratorFrameworkProperties {
      *  是否开启
      */
     boolean enable = true;
+
+    Lock lock;
+
+    /**
+     *  zookeeper 分布式锁
+     */
+    @Data
+    static class Lock {
+
+        /**
+         *  是否开启
+         */
+        boolean enable = true;
+
+        /**
+         *  zookeeper 锁节点
+         */
+        String lockPath = "/CURATOR_LOCK_PATH";
+    }
 }

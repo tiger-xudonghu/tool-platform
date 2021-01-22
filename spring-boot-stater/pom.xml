@@ -21,6 +21,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <curator-framework.version>4.1.0</curator-framework.version>
+        <curator-recipes.version>4.1.0</curator-recipes.version>
         <spring-boot-autoconfigure.version>2.3.1.RELEASE</spring-boot-autoconfigure.version>
         <spring-boot-configuration-processor.version>2.3.1.RELEASE</spring-boot-configuration-processor.version>
     </properties>
@@ -31,6 +32,12 @@
                 <groupId>org.apache.curator</groupId>
                 <artifactId>curator-framework</artifactId>
                 <version>${curator-framework.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator-recipes.version}</version>
             </dependency>
 
             <dependency>

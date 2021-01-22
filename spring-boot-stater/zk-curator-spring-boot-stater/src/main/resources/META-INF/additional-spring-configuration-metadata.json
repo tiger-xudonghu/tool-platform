@@ -34,6 +34,15 @@
       "name": "tool-platform.zk-curator.enable",
       "type": "java.lang.Boolean",
       "defaultValue": true
+    },{
+      "name": "tool-platform.zk-curator.lock.enable",
+      "type": "java.lang.Boolean",
+      "defaultValue": false
+    },{
+      "name": "tool-platform.zk-curator.lock.lock-path",
+      "type": "java.lang.String",
+      "defaultValue": "CURATOR_LOCK_PATH",
+      "description": "Zookeeper 默认设置锁节点"
     }
   ]
 }

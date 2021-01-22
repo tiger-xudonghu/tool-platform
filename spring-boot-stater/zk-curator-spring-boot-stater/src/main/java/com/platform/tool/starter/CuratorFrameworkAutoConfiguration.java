@@ -1,6 +1,7 @@
 package com.platform.tool.starter;
 
 import com.platform.tool.starter.listener.SessionConnectionListener;
+import com.platform.tool.starter.lock.CuratorFrameworkTemplateLock;
 import lombok.SneakyThrows;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -11,7 +12,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 
 import java.net.InetAddress;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -46,6 +46,13 @@ public class CuratorFrameworkAutoConfiguration {
                 .addListener(new SessionConnectionListener(tempNode, nodeValue));
         curatorFramework.create().creatingParentsIfNeeded().withMode(CreateMode.EPHEMERAL_SEQUENTIAL).forPath(tempNode,nodeValue.getBytes("UTF-8"));
         return curatorFramework;
+    }
+
+    @Bean
+    @ConditionalOnBean(name = "curatorFramework")
+    @ConditionalOnProperty(name = "tool-platform.zk-curator.lock.enable", havingValue = "true")
+    CuratorFrameworkTemplateLock curatorFrameworkTemplateLock(CuratorFramework curatorFramework,CuratorFrameworkProperties properties){
+        return new CuratorFrameworkTemplateLock(curatorFramework,properties.getLock().getLockPath());
     }
 
 }
